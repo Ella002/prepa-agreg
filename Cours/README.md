@@ -62,7 +62,7 @@
 
 ## TP: programmation
 
-- Guillaume Baudart
+- Guillaume Baudart: [Huffman](TP_prog/ocaml_huffman)
 - Sam van Gool
 
 ## Sémantiques et Types (option théorique) - Samuel Mimram
