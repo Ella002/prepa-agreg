@@ -90,7 +90,7 @@
 
 TP/cours sur manipulations de websockets en JS
 
-Projet: Pong
+Projet: [Pong](TP3/pong)
 
 ## Compilation - Hubert Comon
 

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta equiv-http="content-type" content="text/html; charset=utf-8"/>
+    <title>Pong</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body>
+    <div id="waitarea">
+      Waiting for another player...
+    </div>
+    <div id="status">You are <span id="player"></span>.</div>
+    <div id="playarea">
+      <canvas id="canvas" width="400" height="500" style="border: solid 1px">
+      </canvas>
+      <p>
+	Player 1: <span id="score1">0</span></br>
+	Player 2: <span id="score2">0</span>
+      </p>
+      <script src="/socket.io/socket.io.js"></script>
+      <script type="text/javascript">
+	var width;
+	var height;
+
+	var yLeft = 30;
+	var yRight = 30;
+	var xBall = 0;
+	var yBall = 0;
+
+	var myNumber = "";
+	var id1;
+	var id2;
+
+	var gameOn = false;
+
+	function drawPaddle(ctx, isLeft, y) {
+	    lx = 0;
+	    if (!isLeft) {
+		lx = ctx.canvas.clientWidth - 5;
+	    }
+	    hy = Math.min(y-20, ctx.canvas.clientHeight - 40);
+	    hy = Math.max(hy, 0);
+	    ctx.fillRect(lx, hy, 5, 40);
+	}
+
+	function drawBall(ctx, x, y) {
+	    ctx.beginPath();
+	    ctx.arc(x, y, 5, 0, Math.PI * 2, true);
+	    ctx.fill();
+	}
+
+	function redrawCanvas(ctx) {
+	    ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
+	    drawPaddle(ctx, true, yLeft);
+	    drawPaddle(ctx, false, yRight);
+	    drawBall(ctx, xBall, yBall);
+	}
+
+	function movePaddle(ctx, isJ1, y) {
+	    if (isJ1) {
+		yLeft = y;
+	    }
+	    else {
+		yRight = y;
+	    }
+	    redrawCanvas(ctx);
+	}
+
+	function moveBall(ctx, x, y) {
+	    xBall = x;
+	    yBall = y;
+	    redrawCanvas(ctx);
+	}
+
+	function emitMove(socket, y) {
+	    if (myNumber != "") {
+		socket.emit('moved paddle', y);
+	    }
+	}
+
+	function startGame (ctx, socket) {
+	    gameOn = true;
+	    width = ctx.canvas.clientWidth;
+	    height = ctx.canvas.clientHeight;
+	    console.log("sending dimensions");
+	    var msgDim = { width : width, height : height };
+	    socket.emit('dimensions', JSON.stringify(msgDim));
+
+	    if (myNumber != "") {
+		alert("You are player "+myNumber+". Ready?");
+		socket.emit('ready');
+	    }
+
+	    drawPaddle(ctx, true, yLeft);
+	    drawPaddle(ctx, false, yRight);
+	}
+
+	window.addEventListener("load", function(e) {
+	    var canvas;
+	    var ctx;
+
+	    var wa = document.getElementById("waitarea");
+	    var pa = document.getElementById("playarea");
+
+	    var socket = io();
+
+	    socket.on('status', function(msg) {
+		jsonMsg = JSON.parse(msg);
+
+		var forMe = jsonMsg.id == socket.id;
+
+		if (forMe) {
+		    if (jsonMsg.status == "player1")
+			myNumber = "1 (left)";
+		    else if (jsonMsg.status == "player2")
+			myNumber = "2 (right)";
+		}
+
+		id1 = jsonMsg.j1;
+		id2 = jsonMsg.j2;
+
+		var status = document.getElementById("status")
+		status.style.display = "block";
+		var player = document.getElementById("player")
+		if (myNumber != "")
+		    player.innerHTML = "player "+myNumber;
+		else
+		    player.innerHTML = "spectating";
+
+		if (id1 != "" && id2 != "") {
+		    console.log("Both players are here!");
+		    wa.style.display = "none";
+		    pa.style.display = "block";
+
+		    canvas = document.getElementById('canvas');
+		    ctx = canvas.getContext('2d');
+
+		    if (!gameOn)
+			startGame(ctx, socket);
+		}
+		else {
+		    wa.style.display = "block";
+		    pa.style.display = "none";
+		    gameOn = false;
+		}
+
+		// if (jsonMsg.status == "player1") {
+		//     if (forMe)
+		// 	isPlayer = true;
+		//     id1 = socket.id;
+		//     announcement = "player 1 (on the left)";
+		// }
+		// else if (jsonMsg.status == "player2") {
+		//     isPlayer = true;
+		//     id1 = jsonMsg.j1;
+		//     id2 = jsonMsg.id;
+		//     announcement = "player 2 (on the right)";
+		// }
+		// else
+		//     if (jsonMsg.id == socket.id) {
+		// 	isPlayer = false;
+		// 	id1 = jsonMsg.j1;
+		// 	id2 = jsonMsg.j2;
+		// 	announcement = "spectating";
+		//     }
+		// if (jsonMsg.id == socket.id) {
+		//     var status = document.getElementById("player")
+		//     if (announcement[7] == '1')
+		// 	status.innerHTML = "player 1"
+		//     else if (announcement[7] == '2')
+		// 	status.innerHTML = "player 2"
+		//     alert("You are "+announcement+". Ready?");
+		//     socket.emit('ready');
+		// }
+	    });
+
+
+	    window.addEventListener('mousemove',
+	    			    function (e) {
+	    				//movePaddle(ctx, amLeft, e.clientY);
+	    				emitMove(socket, e.clientY);
+	    			    });
+
+	    socket.on('move paddle', function(msg) {
+	    	msgObj = JSON.parse(msg);
+	    	if (msgObj.id == id1) {
+	      	    movePaddle(ctx, true, parseInt(msgObj.pos));
+	     	}
+	     	else {
+	     	    movePaddle(ctx, false, parseInt(msgObj.pos));
+	     	}
+	     });
+
+	     socket.on('move ball', function(msg) {
+	     	jsonMsg = JSON.parse(msg);
+	     	moveBall(ctx, jsonMsg.x, jsonMsg.y);
+	     });
+
+	     socket.on('score update', function(msg) {
+	     	jsonMsg = JSON.parse(msg);
+	     	if (jsonMsg.player == id1) {
+	     	    var score = document.getElementById("score1");
+	     	    score.innerHTML = jsonMsg.score;
+	     	}
+	     	else if (jsonMsg.player == id2) {
+	     	    var score = document.getElementById("score2");
+	     	    score.innerHTML = jsonMsg.score;
+	     	}
+	     });
+	});
+      </script>
+    </div>
+  </body>
+</html>

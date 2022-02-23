@@ -1,0 +1,13 @@
+{
+    "name":"pong",
+    "version":"0.0.1",
+    "description":"pong game",
+    "dependencies": {
+	"express": "^4.17.2",
+	"socket.io": "^4.4.1"
+    },
+    "main": "server.js",
+    "scripts": {
+	"start": "node server.js"
+    }
+}
