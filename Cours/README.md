@@ -44,6 +44,8 @@
 
 ## Base de données - Hubert Nacke & Bernd Amann
 
+[Supports de cours + TDs (corrigés)](https://moodle-sciences.upmc.fr/moodle-2021/course/view.php?id=2778&sectionid=10742)
+
 ## Programmation Fonctionnelle - Pierre Courtieu
 
 ## Calculabilité 1 - Laurent Rosaz
