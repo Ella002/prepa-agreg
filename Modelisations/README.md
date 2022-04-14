@@ -1,0 +1,14 @@
+# Entraînements à l'épreuve de modélisation #
+
+## Séances ##
+
+Disclaimer: la qualité des notes n'est pas un indicateur de la qualité de la présentation, mais de l'état du public ^^"
+
+* [06/04 - Jonglage](06-04_Jonglage)
+* [13/04 - Entiers relatifs](13-04_Entiers_relatifs)
+
+## Articles de culture G ##
+
+[Magie numérique et défis juridiques](https://www.lemonde.fr/blog/binaire/2021/02/05/magie-numerique-et-defis-juridiques/)
+
+[Les enjeux de la publicité politique ciblée](https://lejournal.cnrs.fr/billets/les-enjeux-de-la-publicite-politique-ciblee)
