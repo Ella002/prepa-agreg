@@ -95,6 +95,6 @@
 
 📝 Dépassement de 5 minutes : c'est **beaucoup trop** !
 
-    📝 Pour le programme : KISS. Pas la peine de faire une classe (qui introduit des constructions lourdes comme self à chaque fonction) pour un programme si court
+📝 Pour le programme : KISS. Pas la peine de faire une classe (qui introduit des constructions lourdes comme self à chaque fonction) pour un programme si court
 
 📝 Faire des illustrations dès le début
