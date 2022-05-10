@@ -4,7 +4,6 @@ import random
 import matplotlib.pyplot as plt
 
 from strats import next_fit, fit_first, best_fit, waste
-from strats import best_fit_decreasing, fit_first_decreasing
 
 def generate(n: int, c: int) -> List[int]:
     ''' generate(n, c) génère une liste de n objets de taille aléatoire, au plus c
@@ -39,15 +38,11 @@ def simu():
     pertes_nf : List[float] = [ simu_n_strat(n, next_fit) for n in n_values ]
     pertes_ff : List[float] = [ simu_n_strat(n, fit_first) for n in n_values ]
     pertes_bf : List[float] = [ simu_n_strat(n, best_fit) for n in n_values ]
-    pertes_bfd : List[float] = [ simu_n_strat(n, best_fit_decreasing) for n in n_values ]
-    pertes_ffd : List[float] = [ simu_n_strat(n, fit_first_decreasing) for n in n_values ]
 
     fig, ax = plt.subplots()
     ax.plot(n_values, pertes_nf, label='next fit')
     ax.plot(n_values, pertes_ff, label='fit first')
     ax.plot(n_values, pertes_bf, label='best fit')
-    ax.plot(n_values, pertes_bfd, label='best fit decreasing')
-    ax.plot(n_values, pertes_ffd, label='fit first decreasing')
     ax.set_xlabel('n')
     ax.set_ylabel('pertes moyennes')
     ax.legend()

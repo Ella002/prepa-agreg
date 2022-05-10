@@ -80,15 +80,6 @@ def best_fit (objects: List[int], c: int, pp = False) -> int:
     # le nombre de conteneurs a la fin
     return len(bins)
 
-def best_fit_decreasing (objects: List[int], c: int, pp = False) -> int:
-    ''' Best Fit Decreasing
-    best fit, mais en triant préalablement les objets par poids décroissant
-    '''
-    return best_fit(sorted(objects, reverse=True), c, pp)
-
-def fit_first_decreasing (objects: List[int], c: int, pp = False) -> int:
-    return fit_first(sorted(objects, reverse=True), c, pp)
-
 def waste(strat: Callable[[List[int], int], int], objects: List[int], c: int) -> int:
     ''' waste(strat, c, objects) -> c*||strat|| - sum(objects)
     ie l'espace vide quand on applique strat à (objects ; c)
