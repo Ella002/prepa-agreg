@@ -1,5 +1,7 @@
 # Entraînements à l'épreuve de modélisation #
 
+[Eléments sur l'épreuve](https://agreg-info.org/files/2022/03/descriptionMod.pdf)
+
 [Sujet 0](Sujet0.pdf)
 
 [Notes séance 28/03](Note_28_mars_2022.pdf)
