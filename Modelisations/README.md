@@ -1,5 +1,9 @@
 # Entraînements à l'épreuve de modélisation #
 
+[Sujet 0](Sujet0.pdf)
+
+[Notes séance 28/03](Note_28_mars_2022.pdf)
+
 ## Séances ##
 
 Disclaimer: la qualité des notes n'est pas un indicateur de la qualité de la présentation, mais de l'état du public ^^"
