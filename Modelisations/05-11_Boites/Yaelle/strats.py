@@ -1,13 +1,13 @@
 from typing import List, Callable
 
-def next_fit (objects: List[int], c: int, pp = False) -> int:
+def next_fit (objects: List[int], c: int, pp : bool = False) -> int:
     ''' Next Fit
     on ajoute toujours au dernier conteneur,
     et on ajoute un nouveau quand on ne peut pas
     '''
     if len(objects) == 0:
         return 0
-    bins : List[int] = [[]]
+    bins : List[List[int]] = [[]]
     # pour chaque objet
     for o in objects:
         # si on a de la place, on ajoute
@@ -22,14 +22,14 @@ def next_fit (objects: List[int], c: int, pp = False) -> int:
     # le nombre de conteneurs a la fin
     return len(bins)
 
-def fit_first (objects: List[int], c: int, pp = False) -> int:
+def fit_first (objects: List[int], c: int, pp : bool = False) -> int:
     ''' Fit First
     on ajoute au premier conteneur qui a de la place,
     et on ajoute un nouveau s'il n'y en a pas
     '''
     if len(objects) == 0:
         return 0
-    bins : List[int] = [[]]
+    bins : List[List[int]] = [[]]
     # pour chaque objet
     for o in objects:
         bin_idx : int = -1
@@ -39,7 +39,7 @@ def fit_first (objects: List[int], c: int, pp = False) -> int:
                 bin_idx = cnt
                 break
         # s'il y en a un, on y ajoute l'objet
-        if bin_idx >= 0:
+        if bin_idx > -1:
             bins[bin_idx].append(o)
         # sinon on rajoute un conteneur a la fin
         else:
@@ -50,14 +50,14 @@ def fit_first (objects: List[int], c: int, pp = False) -> int:
     # le nombre de conteneurs a la fin
     return len(bins)
 
-def best_fit (objects: List[int], c: int, pp = False) -> int:
+def best_fit (objects: List[int], c: int, pp : bool = False) -> int:
     ''' Best Fit
     on ajoute au conteneur qui a le moins de place,
     et on ajoute un nouveau s'il n'y en a pas
     '''
     if len(objects) == 0:
         return 0
-    bins : List[int] = [[]]
+    bins : List[List[int]] = [[]]
     # pour chaque objet
     for o in objects:
         bin_idx : int = -1
@@ -69,7 +69,7 @@ def best_fit (objects: List[int], c: int, pp = False) -> int:
                 bin_idx = cnt
                 bin_room = room
         # s'il y en a un, on y ajoute l'objet
-        if bin_idx >= 0:
+        if bin_idx > -1:
             bins[bin_idx].append(o)
         # sinon on rajoute un conteneur a la fin
         else:

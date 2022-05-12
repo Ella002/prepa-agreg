@@ -19,7 +19,9 @@ def test_best_fit():
     assert (best_fit([1,2,3], 3) == 2) # res : [{1,2}, {3}]
     assert (best_fit([1,3,2], 3) == 2) # res : [{1,2}, {3}]
     assert (best_fit([3,4,1,2], 5) == 2) # res : [{3,2}, {4,1}]
+    assert (best_fit([1,2,3,4,5,3], 6) == 4) # res : [{1,2,3}, {4}, {5}, {3}]
 
 test_next_fit()
 test_fit_first()
 test_best_fit()
+print("Les tests sont passés")
