@@ -38,21 +38,19 @@ def update_PC(decodeur, pc, alu, archi=32):
 
         if jump:
             # PC = PC + imm
-            nxt_PC = BitArray(pc.to_int() + decodeur.imm.to_int(), archi)
+            return BitArray(pc.to_int() + decodeur.imm.to_int(), archi)
         else:
             # PC = PC + 4
-            nxt_PC = BitArray(pc.to_int() + 4, archi)
+            return BitArray(pc.to_int() + 4, archi)
 
     elif opcode == b'1111011':
         # jal -> PC = PC + imm
-        nxt_PC = BitArray(pc.to_int() + decodeur.imm.to_int(), archi)
+        return BitArray(pc.to_int() + decodeur.imm.to_int(), archi)
 
     elif opcode == b'1110011':
         # jalr -> PC = rs1 + imm
         # on suppose que rs1 + imm a ete calcule par l'ALU
-        nxtPC = alu.res
+        return alu.res
 
     else:
-        nxtPC = BitArray(pc.to_int() + decodeur.imm.to_int(), archi)
-
-    return nxtPC
+        return BitArray(pc.to_int() + 4, archi)

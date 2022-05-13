@@ -179,6 +179,17 @@ def cycle():
     # Mise à jour de PC
     PC.ecriture(update_PC(decodeur, PC.lecture(), alu))
 
+fibo = ['addi 1,0,10', # n <- 10
+        'addi 2,0,2',  # i <- 1
+        'addi 3,0,1',  # ui_2 <- 1
+        'addi 4,0,1',  # ui_1 <- 1
+        'beq 0,0,20',  # goto cond
+        'add 5,3,4',   # ui <- ui_2 + ui_1
+        'add 3,4,0',   # ui_2 <- ui_1
+        'add 4,5,0',   # ui_1 <- ui
+        'addi 2,2,1',  # i <- i+1
+        'blt 2,1,-16']
+
 if __name__ == '__main__':
     init_mem(fibo)
 
