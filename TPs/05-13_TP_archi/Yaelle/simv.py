@@ -180,7 +180,7 @@ def cycle():
     PC.ecriture(update_PC(decodeur, PC.lecture(), alu))
 
 fibo = ['addi 1,0,10', # n <- 10
-        'addi 2,0,2',  # i <- 1
+        'addi 2,0,2',  # i <- 2
         'addi 3,0,1',  # ui_2 <- 1
         'addi 4,0,1',  # ui_1 <- 1
         'beq 0,0,20',  # goto cond
