@@ -1,0 +1,10 @@
+Plan : Vincent Barra, Informatique MP2I et MPI - CPGE 1re et 2e années - Nouveaux programmes. Chap 7, p 155-173
+
+Dvp 1 : Approximation Algorithms, Vazirani et al., p.121-122, ISBN 978-3642084690. 
+		Preuve plus complexe que celle présentée parce qu'on a pas besoin des solutions demi-entières dans la relaxation pour avoir l'approximation.
+		Une 2-approximation est aussi disponible dans le Cormen, mais n'utilise pas de relaxation linéaire.
+		
+Dvp 2 : Chaum, David; Evertse, Jan-Hendrik; van de Graaf, Jeroen (1987). An Improved Protocol for Demonstrating Possession of Discrete Logarithms and Some Generalizations. Advances in Cryptology – EuroCrypt '87: Proceedings. Lecture Notes in Computer Science. Vol. 304. pp. 127–135. ISBN 978-3-540-19102-5 [Citation issue de wikipedia, pdf du contenu disponible à https://static.aminer.org/pdf/PDF/000/192/812/an_improved_protocol_for_demonstrating_possession_of_discrete_logarithms_and.pdf]
+		Notes : preuve peu élaborée dans le bouquin : la correction est faite très rapidement et la coté zero-knowledge utilise un formalisme assez lourd repris (et mal expliqué) d'un autre papier.
+		Le protocole est par contre bien représenté par un schéma. La page wikipedia des preuves zero-knowledge [https://en.wikipedia.org/wiki/Zero-knowledge_proof#Discrete_log_of_a_given_value] donne une version plus élaborée de la preuve de correction, mais toujours pas de preuve en profondeur du concept de simulateur utilisé pour définir et prouver le côté zero-knowledge.
+

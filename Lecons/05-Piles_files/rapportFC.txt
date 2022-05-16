@@ -1,0 +1,52 @@
+La leçon est bien conçue. Il manque des éléments importants :
+
+- une introduction mettant en perspective historique les piles (polonaise inverse introduite par Jan Łukasiewicz et utilisé dans les calculatrices HP de la jeunesse des membres du jury et en algo) et les files (utilisées pour gérer les processus avec ou sans priorité ou simuler des files d'attente)
+
+- être plus explicite sur la notion de parcours, en profondeur ou en largeur, selon l’utilisation d’une pile ou d’une file, c'est mentionné dans la leçon sur les parcours de graphes dans la leçon, mais  cela peut être plus repris dans les exemples développés comme distance de Manhatan (https://fr.wikipedia.org/wiki/Distance_de_Manhattan) avec la solution en pile ou en file
+
+- sur l’analyse amortie, elle est citée dans la leçon et dans dans l’exo de calcul d’enveloppe convexe, il faut l'introduire formellement (voir Tarjan). 
+
+- ajouter les exemples d'application incontournables :
+
+pour les piles : tri par insertion (Beauquier), évaluation des expressions algébriques postfixées et bien parenthésées (Sedgewick), implémentation des procédures récursives (Hopcroft)
+
+pour les files à deux bouts, Dijkstra en blanc, noir, gris (Durr)
+
+- dans les développements expliquer en quoi le choix d'une pile ou d'une file améliore l'algorithme
+
+- sur les représentations en tableau des piles, indiquer que dans le couple (tableau,indice) qui représente une pile, l’indice correspond  la première case libre
+
+- références langages en notation postfixe,
+
+dans les langages en notation suffixe il y a : PostScript langage de description de page influencé par Forth (langage généraliste) 
+  - PostScript : https://fr.wikipedia.org/wiki/PostScript  
+                        https://en.wikipedia.org/wiki/PostScript 
+                        https://www.adobe.com/fr/products/postscript.html
+/cm {72 mul 2.54 div} def               % conversion de pouces
+ 0 0 moveto
+ 0 4 cm lineto stroke
+  - Forth : https://fr.wikipedia.org/wiki/Forth_(langage)  
+                https://en.wikipedia.org/wiki/Forth_(programming_language)
+: CM 72 MUL 2.54 DIV ;
+0 4 CM 
+(* écrire des interprètes de ces langages sont de bons expos pour des licences d’info *)
+
+c’est culturel mais cela permet de construire des exemples plus complexes de programmes en notation suffixe. 
+
+
+
+Bibliographie :
+
+Froidevaux, C., M. Gaudel et M. Soria. Types de données et algorithmes. Ediscience
+international, 1993. web. Collection Informatique.
+Aho, A. V., J. E. Hopcroft et J. D. Ullman. Data Structures and Algorithms. Addison-Wesley,
+1983.
+Beauquier, D., J. Berstel et P. Chrétienne. Eléments d’algorithmique. 463 pages. Masson,
+1992.
+Sedgewick, R. et K. Wayne. Algorithms, 4th Edition. Addison-Wesley, 2011.
+Press, 1998. print. Cambridge tracts in theoretical computer science.
+Dürr, C. et J.-J. Vie. Programmation efficace. ellipses, mar. 2016.
+Wirth, N. Algorithms and data structures. Prentice Hall, 1985.
+Apprendre à programmer avec Ocaml. Conchon et Filliatre, Eyrolles, 2014
+
+Cours de Philippe Baptiste et Luc Maranget (en java...): http://gallium.inria.fr/~maranget/X/421/poly/piles.html discute des différentes applications et fait une bonne introduction.

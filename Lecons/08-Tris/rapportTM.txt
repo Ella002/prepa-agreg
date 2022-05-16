@@ -1,0 +1,12 @@
+Le plan a été bien conçu et très clair, bien qu'il a dépassé un peu le temps
+accordé à l'exposé de ce plan (6 minutes). Le développement a porté
+sur l'algorithme « Shell Sort », qui est une amélioration du tri par
+insertion. L'étude de son temps d'exécution est très complexe, parce
+que cela dépend d'un paramètre (la liste de valeurs de pas/gaps)
+qui peut être construit d'une manière assez subtile et sophistiquée.
+En plus, le temps d'exécution en pratique est des fois un peu éloignée
+de la complexité théorique. Il a montré une maîtrise totale de tous ces
+aspects et il a répondu avec clarté à toutes les questions  qu'on lui a
+posées. Il a très bien pu comparer l'algorithme étudié  avec d'autres
+méthodes de tri, ce qui montre une très bonne maîtrise  générale des
+algorithmes de tris. 
