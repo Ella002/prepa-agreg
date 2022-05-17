@@ -36,6 +36,6 @@
 24. [Exemples d’algorithmes d’apprentissage supervisés et non supervisés.](24-Apprentissage)
 25. [Analyses lexicale et syntaxique. Applications.](25-Compil)
 26. [Classes P et NP. Problèmes NP-complets. Exemples.](26-P_NP)
-27. Décidabilité et indécidabilité. Exemples.
-28. Formules du calcul propositionnel : représentation, formes normales, satisfiabilité. Applications.
-29. Langages rationnels et automates finis. Exemples et applications.
+27. [Décidabilité et indécidabilité. Exemples.](27-Decidabilite)
+28. [Formules du calcul propositionnel : représentation, formes normales, satisfiabilité. Applications.](28-Calcul_propositionnel)
+29. [Langages rationnels et automates finis. Exemples et applications.](29-Langages_rationnels)
