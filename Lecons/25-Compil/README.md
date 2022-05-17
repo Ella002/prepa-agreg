@@ -2,28 +2,33 @@
 
 ## Version Yaëlle ##
 
+### Source ###
+
+- [Compilation: analyse lexicale et syntaxique, Legendre et Schwarzentruber](https://www.amazon.fr/Compilation-Lexicale-Syntaxique-Structure-Informatique/dp/2340003660)
+
+### [Notes](notesYV.md) ###
+
 ### Plan ###
 
 [Plan détaillé](planYV.pdf)
 NB: y a erreur dans l'algo d'analyse lexicale, il manque le texte dans les entrées
 
-+ Motivation: compilation
-+ Analyse lexicale
-  - Principe: lexèmes, règle d'analyse lexicale, utilisation automates
-  - Algorithme
-  - Applications
+1. Motivation: compilation
+2. Analyse lexicale
+  1. Principe: lexèmes, règle d'analyse lexicale, utilisation automates
+  2. Algorithme
+  3. Applications
 	* Dev 1 = utilisation ocamllex
-+ Analyse syntaxique
-  - Contexte: grammaire, dérivation
-  - Analyse descendante
-  - Analyse LL(1)
+3. Analyse syntaxique
+  1. Contexte: grammaire, dérivation
+  2. Analyse descendante
+  3. Analyse LL(1)
 	* Dev 2 = analyse LL(1) sur langage arithmétique
-+ Applications
+4. Applications
 
-### Développement 1 ###
+### Développements ###
 
-Exemple d'utilisation d'OCamllex -> ne fonctionne pas, pas assez de contenu
+- Dev 1 : exemple d'utilisation d'OCamllex -> ne fonctionne pas, pas assez de contenu
 
-### Développement 2 ###
-
-Calcul de null / first / follow pour une grammaire donnée
+- Dev 2 : analyse LL(1): calcul de null / first / follow pour une grammaire donnée
+  [Notes](YV-LL1.pdf)

@@ -1,0 +1,24 @@
+.F1:
+	blt a0, a1, .L1
+	add a0, a1, zero
+.L1:
+	jalr t0, 0(ra)
+
+.main:
+	addi s0, zero, 0x110
+	addi s1, zero, 0x130
+	ld s2, 0(s1)
+	muli s2, s2, 8
+	ld a0, 0(s0)
+	addi s3, zero, 8
+
+.L2:
+	beq s3, s2, .L3
+	add s4, s0, s3
+	ld a1, 0(s4)
+	jal ra, .F1
+	addi s3, s3, 8
+	beq zero, zero, .L2
+
+.L3:
+	// print a0
