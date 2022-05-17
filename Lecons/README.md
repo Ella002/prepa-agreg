@@ -8,6 +8,10 @@
 
 [Éléments sur l'épreuve](https://agreg-info.org/files/2021/12/descriptionLecon.pdf)
 
+## Sources
+
+[Récapitulatif des sources par leçon](https://mypads2.framapad.org/mypads/?/mypads/group/agreg-4g2in69po/pad/view/sources-b724jm9iw)
+
 ## Liste
 
 1. [Exemples de méthodes et outils pour la correction des programmes.](01-Correction)
