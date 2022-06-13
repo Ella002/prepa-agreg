@@ -30,3 +30,17 @@
 
 - Dev 1 : règle de Smith, non préparé
 - Dev 2 : ordonnancement de niveau optimal
+
+## Version Yaëlle ##
+
+### [Notes](notesYV.md) ###
+
+### Plan ###
+
+[Plan détaillé](planYV.pdf)
+
+### Développements ###
+
+- Dev 1 : démonstration des algorithmes d'ordonnancement sur un exemple
+- Dev 2 : Algo de remplacement avec pages de travail
+
