@@ -4,7 +4,7 @@
 
 ### Sources ###
 
-- Plan: Informatique MP2I et MPI, Vincent Barra. Chap 7, p 155-173
+- Plan : Informatique MP2I et MPI, Vincent Barra. Chap 7, p 155-173
 
 - Dev 1 : Approximation Algorithms, Vazirani et al. Pages 121-122
   Preuve plus complexe que celle présentée parce qu'on a pas besoin des solutions demi-entières dans la relaxation pour avoir l'approximation.

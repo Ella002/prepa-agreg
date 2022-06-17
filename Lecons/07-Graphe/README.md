@@ -1,6 +1,6 @@
 # 7 - Accessiblité et chemins dans un graphe. Applications. #
 
-## Version ??? ##
+## Version Maël ##
 
 ### Source ###
 
@@ -8,7 +8,7 @@
 
 ### Plan ###
 
-[Plan détaillé](plan.pdf)
+[Plan détaillé](planMJ.pdf)
 
 1. Définitions et représentations des graphes
 2. Parcours dans les graphes

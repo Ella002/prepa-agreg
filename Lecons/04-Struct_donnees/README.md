@@ -1,6 +1,6 @@
 # 4 - Exemples de structures de données. Applications. #
 
-## Version ??? ##
+## Version Hugo ##
 
 ### Source ###
 

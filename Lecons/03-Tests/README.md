@@ -1,5 +1,34 @@
 # 3 - Tests de programme et inspection de code. #
 
+## Version Jules ##
+
+### Sources ###
+
+???
+
+### [Notes](notesJS.md) ###
+
+### Plan ###
+
+[Plan détaillé](planJS.pdf)
+
+1. Inspection de code
+   1. Revue de code
+   2. Analyse statique automatisée
+	  * Dev 1 = typage
+   3. Méthodes formelles pour l'analyse statique
+2. Tests de programmes
+   1. Test système
+   2. Test de composant
+   3. Conception de tests
+	  * Dev 2
+
+### Développements ###
+
+- Dev 1 : typage d'un langage fonctionnel avec inférence. [Code](JS-dev1.ml)
+
+- Dev 2 : test par chemins d'un programme. [Code](JS-dev2.py)
+
 ## Version Hector ##
 
 ### Source ###
